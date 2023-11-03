@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+   font-size: 14px;
+
+   @screen sm {
+      font-size: 16px;
+   }
+
+   @screen lg {
+      font-size: 18px;
+   }
+}
+
+body,
+html {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+}
+
+
+
+nav {
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   width: 300px;
+}
+
+
+
+.orange_gradient {
+   @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+}
+
+.orange_gradient_bg {
+   background: rgb(253, 253, 253);
+      background: linear-gradient(135deg, rgba(253, 253, 253, 1) 0%, rgba(255, 167, 0, 1) 0%, rgba(255, 166, 0, 0.7792366946778712) 100%);
+}
+
+
+.main {
+   width: 100vw;
+   min-height: 100vh;
+   position: fixed;
+   display: flex;
+   justify-content: center;
+   padding: 120px 24px 160px 24px;
+   pointer-events: none;
+}
+
+.main:before {
+   background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+   position: absolute;
+   content: "";
+   z-index: 2;
+   width: 100%;
+   height: 100%;
+   top: 0;
+}
+
+.main:after {
+   content: "";
+   background-image: url("/assets/images/grid.svg");
+   z-index: 1;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   opacity: 0.4;
+   filter: invert(1);
+}
+
+.gradient {
+   height: fit-content;
+   z-index: 3;
+   width: 100%;
+   max-width: 640px;
+   background-image: radial-gradient(at 27% 37%,
+         hsla(215, 98%, 61%, 1) 0px,
+         transparent 0%),
+      radial-gradient(at 97% 21%, rgb(254, 238, 114) 0px, transparent 50%),
+      radial-gradient(at 52% 99%, rgb(253, 224, 58) 0px, transparent 50%),
+      radial-gradient(at 10% 29%, rgb(60, 56, 71) 0px, transparent 50%),
+      radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+      radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+      radial-gradient(at 79% 53%, rgb(177, 177, 177) 0px, transparent 50%);
+   position: absolute;
+   content: "";
+   width: 100%;
+   height: 100%;
+   filter: blur(100px) saturate(150%);
+   top: 80px;
+   opacity: 0.15;
+}
+
+
+.max-container {
+   max-width: 1440px;
+   margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+.padding-x {
+   @apply  px-8 sm:px-16 
+}
+
+.padding-y {
+   @apply py-4 sm:py-10  
+}
+
