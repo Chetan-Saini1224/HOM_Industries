@@ -7,8 +7,8 @@ import CursorBlinker from "./CursorBlinker";
 export default function RedoAnimText() {
   const textIndex = useMotionValue(0);
   const texts = [
-    "Manufactured Over 30000 Meter of pipes fvvf f",
-    "Supplied Over 5 States in the country",
+    "Serving nationwide, we satisfy diverse clients across states, ensuring happiness with our services and expertise.",
+     "Exceeding expectations, we've crafted and delivered thousands of meters of superior pipes in recent months with precision.",
   ];
 
   const baseText = useTransform(textIndex, (latest) => texts[latest] || "");
@@ -20,13 +20,13 @@ export default function RedoAnimText() {
   const updatedThisRound = useMotionValue(true);
 
   useEffect(() => {
-    animate(count, 60, {
+    animate(count, 170, {
       type: "tween",
-      duration: 5,
+      duration: 10,
       ease: "easeIn",
       repeat: Infinity,
       repeatType: "reverse",
-      repeatDelay: 1,
+      repeatDelay: 0.5,
       onUpdate(latest) {
         if (updatedThisRound.get() === true && latest > 0) {
           updatedThisRound.set(false);

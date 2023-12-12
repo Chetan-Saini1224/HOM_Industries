@@ -22,11 +22,12 @@ const variants = {
   }
 };
 
-const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
+
 
 export const MenuItem = ({ idx,val }) => {
-  const style = { border: `2px solid ${colors[idx]}` };
+
   return (
+    <a href={val.path} target={ (val.name == "Locate")? "__blank":""} >
     <motion.li
       variants={variants}
       whileHover={{ scale: 1.1 }}
@@ -38,9 +39,8 @@ export const MenuItem = ({ idx,val }) => {
         width={30}
         height={30}  
         />
-      <Link href={val.path}>
         {val.name}
-      </Link>
     </motion.li>
+    </a>
   );
 };

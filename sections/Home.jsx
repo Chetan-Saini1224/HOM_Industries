@@ -13,12 +13,12 @@ const Home = () => {
   <div className='min-w-full flex flex-col lg:flex-row'>
 
     <div className='w-full lg:w-4/6 h-3/4 flex flex-col gap-4 justify-center'>
-      <div className='h-2/6  font-semibold text-2xl  lg:text-4xl'>
+      <div className='h-3/6 md:h-2/6 font-semibold text-xl lg:text-2xl'>
         <TextAnim />
 
       </div>
-      <Link href="/#TopProducts" className=' animate-pulse orange_gradient border-2 border-orange-500 font-semibold p-1 w-fit text-center rounded-sm'>
-        Top Products
+      <Link href="/products" className='animate-pulse orange_gradient border-2 border-orange-500 font-semibold p-1 w-fit text-center rounded-sm'>
+         Explore Products
       </Link>
     </div>
 

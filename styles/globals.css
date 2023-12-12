@@ -15,11 +15,14 @@ html {
    }
 }
 
+
+
 body,
 html {
    height: 100%;
    margin: 0;
    padding: 0;
+   font-family: 'Montserrat';
 }
 
 
@@ -32,12 +35,13 @@ nav {
    width: 300px;
 }
 
-
+@layer utilities {
 
 .orange_gradient {
    @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
 }
 
+}
 .orange_gradient_bg {
    background: rgb(253, 253, 253);
       background: linear-gradient(135deg, rgba(253, 253, 253, 1) 0%, rgba(255, 167, 0, 1) 0%, rgba(255, 166, 0, 0.7792366946778712) 100%);
@@ -120,6 +124,6 @@ nav {
 }
 
 .padding-y {
-   @apply py-4 sm:py-10  
+   @apply py-8 sm:pb-8 sm:pt-20  
 }
 

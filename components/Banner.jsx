@@ -3,7 +3,7 @@ import Image from "next/image"
 
 const Banner = () => {
   return (
-    <div className="flex gap-5 justify-around flex-wrap p-2">
+    <div className="flex gap-5 justify-around flex-wrap p-2 bg-[url('/assets/images/banner_bg.jpeg')]">
         <Image
          src="/assets/images/pipes_qualites.jpg"
          alt="pipe details"
