@@ -1,0 +1,16 @@
+.main {
+    @apply flex flex-col gap-4 w-3/12 p-4 bg-slate-200 h-screen fixed;
+}
+
+.link{
+    transition-duration: 200ms;
+    @apply  font-medium shadow-md  p-1 bg-white  hover:bg-orange-400 hover:text-white rounded-md flex justify-between;
+}
+
+.btn_signout{
+    @apply font-medium w-3/5 m-auto shadow-md rounded-md bg-orange-400 hover:text-white hover:bg-orange-600 p-2;
+}
+
+.signOutCard{
+    @apply bg-slate-300 h-1/5 p-2 flex flex-col justify-around rounded-md;
+}

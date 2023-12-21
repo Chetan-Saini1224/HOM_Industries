@@ -3,12 +3,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion, sync, useCycle } from "framer-motion";
 import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
-import styles from "./Navbar.module.css"
+import { signIn } from 'next-auth/react';
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -44,7 +44,7 @@ const Navbar = () => {
   return (
   <>  
     <nav 
-      className=' sticky z-50 bg-slate-100 hidden  md:flex justify-between w-full p-2' >
+      className=' sticky z-50 bg-white hidden  md:flex justify-between w-full p-2 shadow-sm' >
       <div>
         <Link href="/">
           <Image 
@@ -56,7 +56,7 @@ const Navbar = () => {
           />
         </Link>  
       </div>
-      <div className=' w-2/5 flex justify-between pt-5 font-semibold '>
+      <div className=' w-2/6 flex justify-between pt-5 font-semibold '>
             <Link href="/products" className={`orange_gradient hover:text-orange-700 `} >
                 Products
             </Link> 
@@ -69,6 +69,11 @@ const Navbar = () => {
       </div>
         
       <div className='pt-5 font-semibold '>
+          {/* <button
+            onClick={() => signIn()}   
+            className={'p-[5px] mr-2 rounded-md border-[3px]  border-orange-500 orange_gradient'}> 
+              Log In
+          </button>  */}
           <a 
             href="https://www.google.com/maps/@30.3944472,76.8092398,3a,75y,92.3h,82.74t/data=!3m6!1e1!3m4!1sRzU-rW3CMIMg4w_nN8O5bQ!2e0!7i13312!8i6656?entry=ttu" 
             target='_blank' 
@@ -91,10 +96,10 @@ const Navbar = () => {
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
-      className=' sticky z-50 bg-slate-100  md:hidden  flex justify-between w-full'
+      className=' sticky z-50 bg-white   md:hidden  flex justify-between w-full shadow-sm'
   >
     <motion.div variants={sidebar}  />
-    <Navigation />
+    <Navigation shutdown={toggleOpen} />
     <MenuToggle toggle={() => sidebarToogle()} />
     <div>
         <Link href="/">

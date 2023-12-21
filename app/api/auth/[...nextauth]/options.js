@@ -19,12 +19,32 @@ export const options = {
         async authorize(credentials,req){
             //fetch user from database
             connectToDB();
-            const user = await User.findOne({username: credentials.username,password:credentials.password}); 
+            const user = await User.findOne({username:credentials.username,password:credentials.password}); 
             if(user){
-                return user;
+              return user;
             }
-            return null;   
+            else return null;   
         }
     })
   ],
+  session: {
+    jwt: true,
+    maxAge: 30 * 24 * 60 * 60,
+  },
+  jwt: {
+    signingKey: process.env.JWT_SIGNING_PRIVATE_KEY,
+  },
+  callbacks: {
+    async session({ session, token }) {
+      session.user = token.user;
+      return session;
+    },
+    async jwt({ token, user }) {
+
+      if (user) {
+        token.user = user;
+      }
+      return token;
+    },
+  }
 }

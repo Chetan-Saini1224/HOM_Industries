@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import styles from "./Navbar.module.css"
-import Link from "next/link";
 import Image from "next/image";
 
 const variants = {
@@ -24,7 +23,7 @@ const variants = {
 
 
 
-export const MenuItem = ({ idx,val }) => {
+export const MenuItem = ({ idx,val,shutdown }) => {
 
   return (
     <a href={val.path} target={ (val.name == "Locate")? "__blank":""} >
@@ -33,6 +32,7 @@ export const MenuItem = ({ idx,val }) => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       className={styles.li} 
+      onClick={() => shutdown()}
     >
       <Image 
         src={val.image} 

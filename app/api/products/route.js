@@ -39,7 +39,7 @@ export const POST = async (req) => {
             buffer
         );
 
-        data.set("image","public/ProductImage/" + fileName);
+        data.set("image","/ProductImage/" + fileName);
         
         const product = {}
         for (const [key,value] of data.entries())

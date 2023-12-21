@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem";
 import styles from "./Navbar.module.css"
 import { menuItems } from "@/constants";
-import { useEffect, useRef } from "react";
 
 const variants = {
   open: {
@@ -15,12 +14,12 @@ const variants = {
   }
 };
 
-export const Navigation = () =>{
+export const Navigation = ({shutdown}) =>{
 
 return (
   <motion.ul variants={variants} className={styles.ul} >
     {menuItems.map( (val,idx) => (
-      <MenuItem val={val} idx={idx} key={idx}/>
+      <MenuItem val={val} idx={idx} key={idx} shutdown={shutdown}/>
     ))}
   </motion.ul>
 );
