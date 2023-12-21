@@ -25,7 +25,7 @@ const Home = () => {
   <div className='lg:w-2/6 w-full flex items-center justify-around  '>
     <div className=' animate-bounce w-2/6'>
       <Image
-        src="/assets/images/Durable.png"
+        src="/assets/images/DURABLE.png"
         alt="Home_Image"
         width={200}
         height={200}
