@@ -4,12 +4,8 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect } from "react";
 import CursorBlinker from "./CursorBlinker"; 
 
-export default function RedoAnimText() {
+export default function RedoAnimText({texts=[]}) {
   const textIndex = useMotionValue(0);
-  const texts = [
-    "Serving nationwide, we satisfy diverse clients across states, ensuring happiness with our services and expertise.",
-     "Exceeding expectations, we've crafted and delivered thousands of meters of superior pipes in recent months with precision.",
-  ];
 
   const baseText = useTransform(textIndex, (latest) => texts[latest] || "");
   const count = useMotionValue(0);

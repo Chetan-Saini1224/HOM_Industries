@@ -27,6 +27,9 @@ export const options = {
         }
     })
   ],
+  pages: {
+    signIn: '/signIn'
+  },
   session: {
     jwt: true,
     maxAge: 30 * 24 * 60 * 60,

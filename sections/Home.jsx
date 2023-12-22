@@ -5,16 +5,20 @@ import Image from 'next/image';
 import TextAnim from '@/animations/TextAnimation';
 
 const Home = () => {
-   
+  
+    const texts = [
+    "Serving nationwide, we satisfy diverse clients across states, ensuring happiness with our services and expertise.",
+     "Exceeding expectations, we've crafted and delivered thousands of meters of superior pipes in recent months with precision.",
+  ];
 
   return (
   <section  className='relative h-96 flex justify-between items-stretch w-full '>
 
   <div className='min-w-full flex flex-col lg:flex-row'>
-
+  
     <div className='w-full lg:w-4/6 h-3/4 flex flex-col gap-4 justify-center'>
       <div className='h-3/6 md:h-2/6 font-semibold text-xl lg:text-2xl'>
-        <TextAnim />
+        <TextAnim texts={texts} />
 
       </div>
       <Link href="/products" className='animate-pulse orange_gradient border-2 border-orange-500 font-semibold p-1 w-fit text-center rounded-sm'>

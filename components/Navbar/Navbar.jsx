@@ -69,15 +69,16 @@ const Navbar = () => {
       </div>
         
       <div className='pt-5 font-semibold '>
-          {/* <button
+          <input
+            type="button"
             onClick={() => signIn()}   
-            className={'p-[5px] mr-2 rounded-md border-[3px]  border-orange-500 orange_gradient'}> 
-              Log In
-          </button>  */}
+            className="p-1 mr-4 orange_gradient border-2 rounded-md border-orange-500 bg-orange-500 hover:scale-110 duration-300"
+            value="Log In"  
+            />
           <a 
             href="https://www.google.com/maps/@30.3944472,76.8092398,3a,75y,92.3h,82.74t/data=!3m6!1e1!3m4!1sRzU-rW3CMIMg4w_nN8O5bQ!2e0!7i13312!8i6656?entry=ttu" 
             target='_blank' 
-            className=' bg-orange-400 p-2 rounded-md border-[3px] text-white hover:border-orange-500  hover:orange_gradient'>
+            className=' bg-orange-400 p-2 rounded-md border-[3px] text-white hover:border-orange-500  hover:orange_gradient duration-300'>
             <Image
                src="/assets/NavbarIcons/mapLogo.png"
                alt="map_logo"
