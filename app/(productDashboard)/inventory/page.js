@@ -1,11 +1,11 @@
-import Image from "next/image";
+
 import styles from "./inventory.module.css";
 import InventoryCard from "@/components/InventoryCard";
 import UpdateModal from "@/components/UpdateModal";
 
 async function getData() {
   try {
-     const url = process.env.NEXTAUTH_URL;
+    const url = process.env.URI;
     const res = await fetch(`${url}/api/products`,{
     cache:"no-store"
   })
@@ -26,6 +26,7 @@ async function getData() {
  
 export default async function Page({searchParams}) {
   const data = await getData();
+  console.log(data)
   const id = searchParams?.id;
   return ( <>
       <div className={styles.inventory_container}>
