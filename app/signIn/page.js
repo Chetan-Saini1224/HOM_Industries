@@ -58,7 +58,7 @@ function signin() {
          <label className=" mb-1 text-xs font-bold">Password </label>
          <input type="password" className={styles.input} ref={password} placeholder="Password" />
         </div>
-        <input type="submit" value="Submit" className={styles.submitBtn} />  
+        <input type="submit" value="Log In" className={styles.submitBtn} />  
         {error && <p className=" text-red-600 w-3/4 text-xs">Authentication Failed. Please check your credentials and true again.</p>}
       </form>       
     </div>

@@ -39,7 +39,7 @@ export const MenuItem = ({ idx,val,shutdown }) => {
         width={30}
         height={30}  
         />
-        {val.name}
+      <span className=" p-1 font-semibold text-xl">{val.name}</span>  
     </motion.li>
     </a>
   );
