@@ -2,31 +2,23 @@
 import styles from "./inventory.module.css";
 import InventoryCard from "@/components/InventoryCard";
 import UpdateModal from "@/components/UpdateModal";
+import { connectToDB } from "@/utils/database";
+import Product from "@/models/product";
 
 async function getData() {
-  try {
-    const url = process.env.URI;
-    const res = await fetch(`${url}/api/products`,{
-    cache:"no-store"
-  })
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
- 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
-  }
-   
-   return res.json()
-  }
-  catch(err){
-    return err;
-  }
+   try{
+    connectToDB();
+    const products = await Product.find({});
+    return products;
+   }
+   catch(err){
+      return err;  
+   }   
 }
  
-export default async function Page({searchParams}) {
+export default async function Page({searchParams}) 
+{
   const data = await getData();
-  console.log(data)
   const id = searchParams?.id;
   return ( <>
       <div className={styles.inventory_container}>
@@ -34,4 +26,5 @@ export default async function Page({searchParams}) {
       </div>
       {id && <UpdateModal id={id} />}
   </>)
-}
+  }
+

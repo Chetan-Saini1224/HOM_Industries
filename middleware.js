@@ -1,10 +1,23 @@
+import { getToken } from 'next-auth/jwt';
+import { withAuth } from 'next-auth/middleware';
+import { NextResponse } from 'next/server';
 
+export default async function middleware(req) {
+     const token = await getToken({ req });
+     const isAuthenticated = !!token;
 
+     if (req.nextUrl.pathname.startsWith('/signIn') && isAuthenticated) {
+          return NextResponse.redirect(new URL('/add_products', req.url));
+     }
 
-//without a matcher this one lines 
-//applies next-auth to entrire project
-export {default} from "next-auth/middleware";
+     return await withAuth(req, {
+          pages: {
+               signIn: '/signIn',
+          },
+     });
+}
 
-
-//Applies next-auth only to matching routes : can be regex
-export const config =  { matcher: ["/add_products","/inventory"]}
+// specify on which routes you want to run the middleware
+export const config = {
+  matcher: ["/inventory","/add_products", "/signIn"],
+};

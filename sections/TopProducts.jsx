@@ -11,7 +11,6 @@ const TopProducts = () => {
     async function getProducts(){
       const prod = await fetch('/api/products?top=3');
       const data = await prod.json();
-      console.log(data);
       setProducts(data);
     }   
     getProducts()

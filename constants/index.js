@@ -31,13 +31,13 @@ export const aboutUs =
 
 export const OwnersDetail = [
     {
-        name:"Owner 1",
+        name:"Sanjiv Kumar Saini",
         postion: "CEO of HOM Industries",
         photoPath:"/assets/images/user.png", 
     },
     {
-        name:"Owner 2",
-        postion: "CEO of HOM Industries",
+        name:"Anil Kumar Saini",
+        postion: "Co-Founder of HOM Industries",
         photoPath:"/assets/images/user.png", 
     },
 
