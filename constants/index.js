@@ -2,8 +2,6 @@ export const menuItems = [
     {path:"/products",name:'Products',image:'/assets/NavbarIcons/Products.png'},
     {path:"/#TopProducts",name:"Top Products",image:'/assets/NavbarIcons/topProduct.png'},
     {path:"/#AboutUs",name:'About Us',image:'/assets/NavbarIcons/aboutUs.png'},
-    {path:"/signIn",name:'Log In',image:'/assets/NavbarIcons/login.png'},
-    {path:"/add_products",name:'Dashboard',image:'/assets/NavbarIcons/dashboard_icon.png'},
     {path:'https://www.google.com/maps/@30.3944472,76.8092398,3a,75y,92.3h,82.74t/data=!3m6!1e1!3m4!1sRzU-rW3CMIMg4w_nN8O5bQ!2e0!7i13312!8i6656?entry=ttu',name:'Locate',image:'/assets/NavbarIcons/mapLogo.png'},
 ]
 

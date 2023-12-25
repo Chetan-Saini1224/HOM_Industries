@@ -5,6 +5,7 @@ import { MenuItem } from "./MenuItem";
 import styles from "./Navbar.module.css"
 import { menuItems } from "@/constants";
 import { useSession } from "next-auth/react";
+import { useEffect } from "react";
 
 const variants = {
   open: {
@@ -16,15 +17,20 @@ const variants = {
 };
 
 export const Navigation = ({shutdown,className}) =>{
-const {status} = useSession();
+const { status } = useSession();
+const signInBtn =  {path:"/signIn",name:'Log In',image:'/assets/NavbarIcons/login.png'};
+const dashBtn =   {path:"/add_products",name:'Dashboard',image:'/assets/NavbarIcons/dashboard_icon.png'};
+
 return (
   <motion.ul variants={variants} className={`${className} ${styles.ul}`} >
     {menuItems.map( (val,idx) => 
     {
-     if(status == "authenticated" && val.name == 'Log In') return;
-     else if((status == "unauthenticated" && val.name == 'Dashborad')) return;
-     else return <MenuItem val={val} idx={idx} key={idx} shutdown={shutdown}/>
+     return <MenuItem val={val} idx={idx} key={idx} shutdown={shutdown}/>
     })}
+    {(status == "authenticated")? 
+        <MenuItem val={dashBtn} shutdown={shutdown}/> :
+        <MenuItem val={signInBtn}  shutdown={shutdown}/>
+    }
   </motion.ul>
 );
 }
