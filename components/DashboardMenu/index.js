@@ -3,13 +3,21 @@ import { signOut, useSession } from "next-auth/react"
 import Link from "next/link"
 import styles from "./dashboard.module.css";
 import Image from "next/image";
+import { useState } from "react";
 
 
 const Dashboard = () => {
   const {data} = useSession();
-  console.log(data)
+  const [sidebar,setSidebar] = useState(false);
   return (
-        <div className={styles.main}>
+        <div className={`${(sidebar)? " m-0 ":' -ml-56 '} ${styles.main}`}>
+             <div className=" lg:hidden flex flex-row-reverse">
+                <button 
+                    className=" font-bold border-b-4 px-1 border-orange-500"
+                    onClick={() => setSidebar(prev => !prev)} >
+                    {(sidebar)? "< Close" : "Open >"}
+                </button> 
+             </div>
             <div className=" flex gap-4">
                 <Image 
                     src="/assets/NavbarIcons/dashboard.png"

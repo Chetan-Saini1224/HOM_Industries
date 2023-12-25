@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem";
 import styles from "./Navbar.module.css"
 import { menuItems } from "@/constants";
+import { useSession } from "next-auth/react";
 
 const variants = {
   open: {
@@ -14,13 +15,16 @@ const variants = {
   }
 };
 
-export const Navigation = ({shutdown}) =>{
-
+export const Navigation = ({shutdown,className}) =>{
+const {status} = useSession();
 return (
-  <motion.ul variants={variants} className={styles.ul} >
-    {menuItems.map( (val,idx) => (
-      <MenuItem val={val} idx={idx} key={idx} shutdown={shutdown}/>
-    ))}
+  <motion.ul variants={variants} className={`${className} ${styles.ul}`} >
+    {menuItems.map( (val,idx) => 
+    {
+     if(status == "authenticated" && val.name == 'Log In') return;
+     else if((status == "unauthenticated" && val.name == 'Dashborad')) return;
+     else return <MenuItem val={val} idx={idx} key={idx} shutdown={shutdown}/>
+    })}
   </motion.ul>
 );
 }

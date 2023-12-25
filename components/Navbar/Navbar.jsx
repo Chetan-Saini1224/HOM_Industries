@@ -3,13 +3,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { motion, sync, useCycle } from "framer-motion";
 import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
 import { signIn } from 'next-auth/react';
-import { useParams,usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 
 const sidebar = {
@@ -36,9 +35,6 @@ const sidebar = {
 const Navbar = () => {
 
   const [isOpen, toggleOpen] = useCycle(false, true);
-
-  const containerRef = useRef(null);
-  const { height } = useDimensions(containerRef);
   const {status,data} = useSession();
   function sidebarToogle(){
     toggleOpen();
@@ -59,9 +55,9 @@ const Navbar = () => {
           />
         </Link>  
       </div>
-      <div className=' w-2/6 flex justify-between pt-5 font-semibold '>
+      <div className='lg:w-2/6 w-5/12 flex justify-between pt-5 font-semibold '>
             <Link href="/products" 
-                  className='orange_gradient hover:text-orange-700 hover:border-b-4 duration-150 hover:border-orange-600'>
+                  className=' orange_gradient hover:text-orange-700 hover:border-b-4 duration-150 hover:border-orange-600'>
                 Products
             </Link> 
             <Link href="/#TopProducts" className='orange_gradient hover:text-orange-700 duration-150 hover:border-b-4 hover:border-orange-600'>
@@ -100,13 +96,14 @@ const Navbar = () => {
   <motion.nav
       initial={false}
       animate={isOpen ? "open" : "closed"}
-      custom={height}
-      ref={containerRef}
-      className=' sticky z-50 bg-white   md:hidden  flex justify-between w-full shadow-sm'
-  >
+      className=' sticky z-50 bg-white md:hidden flex justify-between w-full shadow-sm'>
     <motion.div variants={sidebar}  />
-    <Navigation shutdown={toggleOpen} />
-    <MenuToggle toggle={() => sidebarToogle()} />
+    <Navigation shutdown={toggleOpen} className={(isOpen)? ' block' : ' hidden'} />
+    <div className='p-1 flex gap-1 absolute left-3 top-6'>
+      <MenuToggle toggle={() => sidebarToogle()} />
+      <p className='font-bold text-lg'>Menu</p>
+    </div>
+
     <div>
         <Link href="/">
           <Image 

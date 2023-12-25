@@ -1,5 +1,6 @@
 .main {
-    @apply flex flex-col gap-4 w-3/12 p-4 bg-slate-200 h-screen fixed;
+    transition: margin 300ms linear;
+    @apply flex flex-col  lg:m-0 gap-4 w-fit p-4 bg-slate-200 h-screen fixed;
 }
 
 .link{
