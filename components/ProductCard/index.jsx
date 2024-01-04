@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image'
 import React from 'react'
 // import InViewConatiner from '@/animations/InViewConatiner'
@@ -25,7 +27,7 @@ const ProductCard = ({product,animteOut}) => {
             <p className=' font-bold mt-4 ml-1'> 
             <small className=' font-normal'>&#8377;</small> {product.price}/m 
             </p>
-            <p> Minimum Qty : <span className=' font-semibold'>{product.minQty} m</span></p>
+            <p> Min Qty : <span className=' font-semibold'>{product.minQty} m</span></p>
         </div>
       </div> 
     </motion.div>
