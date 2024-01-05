@@ -1,0 +1,7 @@
+.inputs {
+    @apply outline-none p-1 border-b-4 border-orange-400 rounded-t-lg shadow-md w-11/12 md:w-4/6;
+}
+
+.inputContainer {
+  @apply flex justify-between flex-col md:flex-row;
+}

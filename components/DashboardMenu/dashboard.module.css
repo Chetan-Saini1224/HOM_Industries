@@ -13,5 +13,5 @@
 }
 
 .signOutCard{
-    @apply bg-slate-300 h-1/5 p-2 flex flex-col justify-around rounded-md;
+    @apply bg-slate-300 h-1/5 p-2 flex flex-col justify-around rounded-md gap-4;
 }

@@ -10,12 +10,12 @@ const Dashboard = () => {
   const {data} = useSession();
   const [sidebar,setSidebar] = useState(false);
   return (
-        <div className={`${(sidebar)? " m-0 ":' -ml-56 '} ${styles.main}`}>
-             <div className=" lg:hidden flex flex-row-reverse">
+        <div className={`${(sidebar)? " ml-0 ":' -ml-72'} ${styles.main}`}>
+             <div className=" lg:hidden absolute -right-24">
                 <button 
-                    className=" font-bold border-b-4 px-1 border-orange-500"
+                    className=" font-bold bg-orange-400 p-1 text-white rounded-sm outline-none"
                     onClick={() => setSidebar(prev => !prev)} >
-                    {(sidebar)? "< Close" : "Open >"}
+                    {(sidebar)? "< Close List" : "Open List >"} 
                 </button> 
              </div>
             <div className=" flex gap-4">
@@ -25,7 +25,7 @@ const Dashboard = () => {
                     height={20}
                     className={styles.homeImage}
                 />
-                <p className=" pt-4 font-bold text-xl">Admin Dashboard</p> 
+                <p className=" pt-8 font-bold text-xl ">Admin Dashboard</p> 
             </div>
             <Link href="/add_products" className={styles.link}>
                 <span className=" p-1">Add Product</span>
