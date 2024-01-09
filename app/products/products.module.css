@@ -1,0 +1,3 @@
+.Container {
+  @apply padding-x padding-y flex gap-4 flex-wrap justify-evenly h-fit;
+}

@@ -1,25 +1,31 @@
-"use client"
-
-import { useEffect, useState } from "react"
+import Product from "@/models/product";
+import { connectToDB } from "@/utils/database";
 import { ProductCard } from "@/components";
+import styles from "./products.module.css";
+
+async function getData() {
+   try{  
+    // await  new Promise(resolve => setTimeout(resolve,3000));
+    await connectToDB();
+    const products = await Product.find({});
+    return products;
+   }
+   catch(err){
+      return err;  
+   }   
+}
 
 
-const Products = () => {
-  const [products,setProducts] = useState([]);
-
-  useEffect(() => {
-    async function getProducts(){
-      const prod = await fetch('/api/products');
-      const data = await prod.json();
-      setProducts(data);
-    }   
-    getProducts()
-  },[])
+const Products =async () => {
+  const products = await getData();
   return (
-    <div id="Products" className="padding-x padding-y flex gap-4 flex-wrap justify-evenly h-fit">
-        {products.map((val,idx) => (
-          <ProductCard product={val} key={idx} />
-        ))}
+    <div id="Products" className={styles.Container}>
+        {products.map((val,idx) => { 
+          val._doc._id = val._doc._id.toString();
+          return (
+              <ProductCard product={val._doc} key={idx} />
+          )
+        })}
     </div>
   )
 }
