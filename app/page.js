@@ -11,21 +11,21 @@ export default function App() {
          <Head>
             <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'></link>
          </Head>   
-         <section id="Home" className='padding-x'>
+         <section id="Home" className='padding_x'>
             <Home />
          </section>
-         <section className='padding-x'>
+         <section className='padding_x'>
               <div className='rounded-md w-full'>
                   <Banner />
                </div>
          </section>
-         <section className='padding-x padding-y' id="TopProducts">
+         <section className='padding_x padding_y' id="TopProducts">
             <TopProducts />   
          </section>
-         <section id="AboutUs" className='padding-x padding-y'>
+         <section id="AboutUs" className='padding_x padding_y'>
              <AboutUs /> 
          </section>
-         <section id="Footer" className='padding-x'>
+         <section id="Footer" className='padding_x'>
             <Footer />
          </section>
    </>   

@@ -35,17 +35,17 @@ nav {
    width: 300px;
 }
 
-@layer utilities {
+@layer components {
 
 .orange_gradient {
    @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
 }
 
-.padding-x {
+.padding_x {
    @apply px-8 sm:px-16;
 }
 
-.padding-y {
+.padding_y {
    @apply py-8 sm:pb-8 sm:pt-20;
 }
 
