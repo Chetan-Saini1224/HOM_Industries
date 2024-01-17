@@ -1,0 +1,8 @@
+
+.input {
+    @apply flex flex-col justify-between;
+}
+
+.inputField{
+   @apply  p-1 rounded-t-md border-b-4 border-orange-500 mt-1 outline-none;
+}

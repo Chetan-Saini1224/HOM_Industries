@@ -36,6 +36,7 @@ export const MenuItem = ({ idx,val,shutdown }) => {
     >
       <Image 
         src={val.image} 
+        alt="menu_item"
         width={30}
         height={30}  
         />

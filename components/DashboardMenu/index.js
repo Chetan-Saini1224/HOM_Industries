@@ -21,29 +21,32 @@ const Dashboard = () => {
             <div className=" flex gap-4">
                 <Image 
                     src="/assets/NavbarIcons/dashboard.png"
+                    alt="dashboard"
                     width={80}
                     height={20}
                     className={styles.homeImage}
                 />
                 <p className=" pt-8 font-bold text-xl ">Admin Dashboard</p> 
             </div>
-            <Link href="/add_products" className={styles.link}>
+            <Link href="/add_products" className={styles.link} onClick={() => setSidebar(false)}>
                 <span className=" p-1">Add Product</span>
                 <Image
                    src="/assets/NavbarIcons/addProduct.png"
+                   alt="add_products"
                    width={35}
                    height={50}                   
                 />
             </Link>
-            <Link href="/inventory" className={styles.link}>
+            <Link href="/inventory" className={styles.link} onClick={() => setSidebar(false)}>
                 <span className=" p-1">Inventory</span>
                 <Image
                    src="/assets/NavbarIcons/inventory.png"
+                   alt="inventory"
                    width={35}
                    height={50}                   
                 />
             </Link>
-            <Link href="" className={styles.link}>
+            <Link href="/messages" className={styles.link} onClick={() => setSidebar(false)}>
                 <span className=" p-1">Messages </span>
                 <Image
                    src="/assets/NavbarIcons/messages.png"
@@ -55,6 +58,7 @@ const Dashboard = () => {
                  <p className="flex bg-slate-400 p-1 shadow-md rounded-md w-fit  hover:scale-105 transition">
                     <Image 
                         src="/assets/images/user.png"
+                        alt="user"
                         width={30}
                         height={30}
                         className=" mr-2 rounded-md"

@@ -1,7 +1,7 @@
 'use client'
 
 import InViewConatiner from "@/animations/InViewConatiner"
-import { delayVariants } from "@/animations/Variants"
+import MessageForm from "./MessageForm"
 import Image from "next/image"
 import {aboutUs, Address,OwnersDetail,contactDetails } from "@/constants"
 
@@ -16,12 +16,7 @@ const AboutUs = () => {
       </p>
       <div className="flex gap-10 flex-col md:flex-row">  
         <InViewConatiner className="flex-1 flex flex-col justify-center items-center gap-10" >
-           <Image
-              src="/assets/images/pipes_qualites.jpg"    
-              alt="Factory Image"
-              width={300}
-              height={300}
-           />
+           <MessageForm />  
            <div className=" flex gap-10">
               <Image
                 src="/assets/social_icons/Insta.png"    

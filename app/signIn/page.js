@@ -35,6 +35,7 @@ function signin() {
           <div className={styles.firstSpin}>
            <Image
               src="/assets/images/DURABLE.png"
+              alt="durable"
               width={220}
               height={220}
               className="rounded-full" 
@@ -43,6 +44,7 @@ function signin() {
           <div className={styles.secondSpin}>
            <Image
               src="/assets/images/fire_resistant.png"
+              alt="fire resisent"
               width={220}
               height={220}
               className=" rounded-full"

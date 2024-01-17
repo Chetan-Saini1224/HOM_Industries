@@ -3,14 +3,11 @@
 import { Home,TopProducts,AboutUs,Footer } from '@/sections'
 import Banner from '@/components/Banner'
 
-import Head from 'next/head'
+
 
 export default function App() {
   return (
-  <>
-         <Head>
-            <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'></link>
-         </Head>   
+  <>  
          <section id="Home" className='padding_x'>
             <Home />
          </section>

@@ -12,6 +12,7 @@ const InventoryCard = ({product}) => {
         <Link href={`/inventory?id=${product._id}`}>
           <Image 
             src="/assets/DashboardIcons/edit.png"
+            alt="edit"
             width={25}
             height={30}
           />
@@ -36,6 +37,7 @@ const InventoryCard = ({product}) => {
          {(product.image)? 
          <Image
           src={product.image}
+          alt="product_image "
           width={100}
           height={50}
          /> :

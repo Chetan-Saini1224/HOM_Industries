@@ -8,6 +8,7 @@ export default function Loading() {
       <div className=" flex items-center flex-col">
         <Image
           src="/assets/images/HOM_LOGO.png"
+          alt="Company Logo"
           width={100}
           height={80}
           className=" rounded-3xl animate-bounce"
