@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx,css}',
     './components/**/*.{js,ts,jsx,tsx,mdx,css}',
@@ -18,5 +18,16 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-animation-delay"),
+    function ({ addUtilities }) {
+      addUtilities({
+        '.padding_x': {
+          '@apply px-8 sm:px-16': {},
+        },
+        '.padding_y': {
+          '@apply py-8 sm:pb-8 sm:pt-20': {},
+        }
+        // ...
+      })
+    }
   ],
 }

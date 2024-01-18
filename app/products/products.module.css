@@ -1,3 +1,5 @@
-.Container {
-  @apply padding_x padding_y sm:pt-20 flex gap-4 flex-wrap justify-evenly h-fit;
-}
+
+  .Container {
+      @apply padding_x padding_y sm:pt-20 flex gap-4 flex-wrap justify-evenly h-fit;
+    }
+
