@@ -10,7 +10,7 @@ const Dashboard = () => {
   const {data} = useSession();
   const [sidebar,setSidebar] = useState(false);
   return (
-        <div className={`${(sidebar)? " ml-0 ":' -ml-72'} ${styles.main}`}>
+        <div className={`${(sidebar)? " ml-0 ":' -ml-72'}  ${styles.main}`}>
              <div className=" lg:hidden absolute -right-24">
                 <button 
                     className=" font-bold bg-orange-400 p-1 text-white rounded-sm outline-none"

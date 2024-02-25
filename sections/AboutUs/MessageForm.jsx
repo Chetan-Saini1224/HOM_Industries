@@ -68,7 +68,7 @@ const MessageForm = () => {
             type='submit'
             value="Send"
             disabled = {submitting}
-            className=" text-white font-semibold bg-orange-500 rounded-sm w-fit px-2 py-1 hover:bg-orange-600 hover:scale-105 hover:rounded-md delay-75"
+            className=" text-white font-semibold bg-orange-500 rounded-sm w-fit px-2 py-1 hover:bg-orange-700 delay-75"
         />
         {(status) && <p className=" text-yellow-600 font-semibold py-2">. {status}</p>}
         </div> 

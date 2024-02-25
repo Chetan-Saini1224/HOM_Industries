@@ -8,7 +8,7 @@ import {aboutUs, Address,OwnersDetail,contactDetails } from "@/constants"
 const AboutUs = () => {
   return (
     <section >
-      <p className=' font-extrabold text-2xl orange_gradient mb-2 border-b-4 border-b-slate-600'>
+      <p className=' font-bold text-3xl orange_gradient mb-2 border-b-4 border-b-slate-600'>
         About Us
       </p>
       <p className=" mb-8 text-md">
@@ -59,7 +59,7 @@ const AboutUs = () => {
                 width={100}
                 height={100}
               />
-              <p className=" text-s font-semibold">{val.name}</p>
+              <p className=" text-xs font-medium">{val.name}</p>
               <p className=" text-xs font-semibold">{val.postion}</p>
             </div>   
           ))}

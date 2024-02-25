@@ -37,7 +37,7 @@ const AddProduct = () => {
 
   return (
         <div className="flex flex-col w-full  gap-2 mt-4 pb-3">
-            <p className=" font-semibold text-xl bg-slate-400 p-1 rounded-sm pl-3 text-white">ADD PRODUCTS</p>
+            <p className=" font-semibold text-xl bg-slate-400 p-1 py-2 rounded-sm pl-3 text-white">ADD PRODUCTS</p>
             <form className="flex flex-col gap-4 w-full md:w-4/5 " onSubmit={handleSubmit}>
             <div className={Styles.inputContainer}>
               <label className="p-2 font-semibold">Product Name</label>
@@ -66,7 +66,7 @@ const AddProduct = () => {
               required />
             </div>
             <div className={Styles.inputContainer}>
-              <label className="p-2 font-semibold">Minimum Qty</label>  
+              <label className="p-2 font-semibold">Minimum Qty <span className=" text-xs font-normal">(in meter)</span></label>  
               <input 
                 type="number"
                 placeholder="ex: 1000"
@@ -79,7 +79,7 @@ const AddProduct = () => {
                 required />
             </div>  
             <div className={Styles.inputContainer}>
-              <label className="p-2 font-semibold">Price <span className=" text-xs">(/meter)</span> </label>  
+              <label className="p-2 font-semibold">Price <span className=" text-xs font-normal">(/meter)</span> </label>  
               <input type="number" placeholder="ex: 29" className={Styles.inputs}
                   value={data.price}
                   onInput={(e) => setData((prev) => ({

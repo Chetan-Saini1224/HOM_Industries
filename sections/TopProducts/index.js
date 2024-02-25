@@ -12,7 +12,7 @@ import Link from 'next/link'
 const SuspenseTopProduct = () =>{
   return(
     <div className=' h-full'>
-    <p className=' font-extrabold text-2xl orange_gradient mb-10 border-b-4 border-b-slate-600'>
+    <p className=' font-bold text-3xl orange_gradient mb-10 border-b-4 border-b-slate-600'>
       Top Products
     </p>
     <div className='flex justify-between flex-wrap gap-6'> 

@@ -1,25 +1,28 @@
-import { connectToDB } from "@/utils/database"
-import Message from "@/models/message"
-import MessageCard from "@/components/MessageCard"
+'use client'
 
-const getData = async () => {
-    try{
-        await connectToDB()
-        const message = await Message.find({});
-        return message;
-    }
-    catch(err){
-        return {error:"Server Error"};
-    }
-}
+import {Suspense} from "react";
+import MessageCard from "@/components/MessageCard";
+import { useSuspenseQuery } from "@tanstack/react-query";
+const Messages =  () => {
+  const {data:messages,isLoading,error} = useSuspenseQuery({
+    queryKey: ['product'],
+    queryFn: async function getData(){
+            const res = await fetch(`/api/messages`,{method:'get'});
+            if(res.ok) return res.json();
+            else throw new Error("server side error"); 
+      },
+      placeholderData:[]
+  })
 
-const Messages = async () => {
-  const messages = await  getData();
   return (
+  <Suspense fallback={<div>Loading...</div>}>
     <div className=' p-1 flex gap-1 flex-col'>
-       {messages.map((val) => <MessageCard message={val} key={val._id} /> )}
+       {messages.map((val,idx) =>{  
+         return <MessageCard message={val} key={val._id} number={idx+1} /> 
+        })}
     </div>
+  </Suspense>   
   )
 }
 
-export default Messages
+export default Messages;

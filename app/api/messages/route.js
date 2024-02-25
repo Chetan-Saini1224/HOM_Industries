@@ -7,11 +7,20 @@ export async function POST(req) {
     {
         const data = await req.json();
         if(!data.message || !data.number) return NextResponse.json({message: `Number/Message can't be empty`},{status:200});
-        await connectToDB();
-        await  Messages.create(data);
+
         return NextResponse.json({message: 'Message Sent Successfully'},{status:200});
     }
     catch(err){
         return NextResponse.json({message: 'Internal Server Error'},{status:500});
+    }
+}
+export const GET = async (req) => {
+    try{
+        await connectToDB()
+        const message = await Messages.find({});
+        return NextResponse.json(message,{status:200})
+    }
+    catch(err) {
+        return NextResponse.json({message:'Internal Server Error'},{status:500});
     }
 }

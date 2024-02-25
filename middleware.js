@@ -19,5 +19,5 @@ export default async function middleware(req) {
 
 // specify on which routes you want to run the middleware
 export const config = {
-  matcher: ["/inventory","/add_products", "/signIn"],
+  matcher: ["/inventory","/add_products", "/signIn","/messages"],
 };

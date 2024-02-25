@@ -1,8 +1,10 @@
 import styles from "./inventory.module.css";
 import InventoryCard from "@/components/InventoryCard";
-import UpdateModal from "@/components/UpdateModal";
+const UpdateModal = lazy(() => import("@/components/UpdateModal/index"))
 import { connectToDB } from "@/utils/database";
 import Product from "@/models/product";
+import { lazy } from "react";
+
 
 async function getData() {
    try{  

@@ -3,6 +3,7 @@ import '@/styles/globals.css'
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/Navbar/Navbar'
 import AuthProvider from '@/context/AuthProvider'
+import { TanstackProvider } from '@/context/TanstackProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,16 +16,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      <AuthProvider>
-      <div className='main'>
+        <AuthProvider>
+        <TanstackProvider>
+        <div className='main'>
         <div className='gradient' />
-      </div>
-      <main className='relative' >
-      <Navbar />
-      {children}
-      </main>
-      </AuthProvider>
-      </body>
+        </div>
+        <main className='relative' >
+        <Navbar />
+        {children}
+        </main>
+        </TanstackProvider>
+        </AuthProvider>
+        </body>
     </html>
   )
 }
